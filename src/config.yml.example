@@ -1,4 +1,4 @@
-HHBLITS_PATH: /data3/software/boctopus2/src/app/hhsuite-2.0.16-linux-x86_64
-HHBLITS_DB_PATH: /data/hhsuite/uniprot20_2013_03/uniprot20_2013_03
-blastpath: /data3/software/boctopus2/src/app/blast-2.2.26/bin
-rpath: /home/nanjiang/anaconda3/envs/boctopus2/bin/
+HHBLITS_PATH: # path to the hhsuite, e.g. /software/hhsuite-2.0.16-linux-x86_64
+HHBLITS_DB_PATH: # path to the hhblits database, e.g /data/hhsuite/uniprot20_2013_03/uniprot20_2013_03
+blastpath: # path to the blast bin, e.g. /software/blast-2.2.26/bin
+rpath: # path to the R executable, e.g. /home/myuser/nanjiang/anaconda3/envs/boctopus2/bin/
