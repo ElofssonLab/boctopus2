@@ -1,0 +1,16 @@
+# Compiled source
+*.pyc
+
+# vim temp files
+.*.swp
+
+# backup folder
+bak/
+
+src/app
+tex.cache
+test/out*
+
+
+
+
