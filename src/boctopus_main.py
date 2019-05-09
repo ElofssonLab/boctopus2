@@ -6,6 +6,7 @@
 #   I will just make a quick and dirty solution.
 
 import os, sys, string
+import yaml
 
 sys.path.append("/usr/local/lib/python2.7/dist-packages")
 
@@ -50,27 +51,25 @@ if not os.path.exists(outpath):
 infile = os.path.realpath(infile)
 outpath = os.path.realpath(outpath)
 
-## path to hhblits executibles
-#HHBLITS_PATH="/groups/marks/software/hhsuite/hhsuite-2.0.16"
-HHBLITS_PATH = "%s/app/hhsuite-2.0.16-linux-x86_64"%(rundir)
+##################### Load configuration ######################
+with open("config.yml", 'r') as ymlfile:
+    cfg = yaml.load(ymlfile)
+
+HHBLITS_PATH = cfg['HHBLITS_PATH']
 HHLIB = HHBLITS_PATH + "/lib/hh"
+reformatpath = "%s/scripts/reformat.pl"%(HHLIB)
 os.environ["HHLIB"] = HHLIB
 
-## path to sequence database for running hhblits
-#HHBLITS_DB_PATH = "/groups/marks/databases/hhsuite/uniprot20_2013_03/uniprot20_2013_03"
-HHBLITS_DB_PATH = "/data/hhsuite/uniprot20_2013_03/uniprot20_2013_03"
+HHBLITS_DB_PATH = cfg['HHBLITS_DB_PATH']
 
-reformatpath = "%s/scripts/reformat.pl"%(HHLIB)
-
-blastpath = "%s/app/blast-2.2.26/bin"%(rundir)
-
+blastpath = cfg['blastpath']
 blastpgppath = "%s/blastpgp"%(blastpath)
 
-## path to R executible
-rpath     = "/usr/bin/"
+rpath = cfg['rpath']
 
-## path to modhmm executible (provided with this code)
 modHome   = "%s/modhmm/"%(rundir)
+##################  End of configuration ####################
+
 
 try:
     tmpdir = tempfile.mkdtemp(prefix="%s/boctopus2_"%(TMPPATH))
