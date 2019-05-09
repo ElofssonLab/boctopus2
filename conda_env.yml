@@ -1,0 +1,11 @@
+name: boctopus2
+channels:
+  - conda-forge
+dependencies:
+  - python=2.7
+  - numpy=1.15.4
+  - matplotlib==2.2.3
+  - pyyaml
+  - requests=2.20.1
+  - r-optparse
+  - r-e1071
