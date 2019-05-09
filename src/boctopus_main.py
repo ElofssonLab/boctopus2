@@ -53,7 +53,7 @@ outpath = os.path.realpath(outpath)
 
 ##################### Load configuration ######################
 with open("config.yml", 'r') as ymlfile:
-    cfg = yaml.load(ymlfile)
+    cfg = yaml.safe_load(ymlfile)
 
 HHBLITS_PATH = cfg['HHBLITS_PATH']
 HHLIB = HHBLITS_PATH + "/lib/hh"
@@ -172,7 +172,9 @@ BOCTOPUS_v2: improved topology prediction of transmembrane beta-barrel proteins
 ****************************************************************************
 
 If you use BOCTOPUS_v2, please cite the following paper:
-Hayat, Sikander and Elofsson, Arne, (to submit)
+Inclusion of dyad-repeat pattern improves topology prediction of transmembrane
+beta-barrel proteins. Sikander Hayat , Christoph Peters, Nanjiang Shu, Kostas D
+Tsirigos, Arne Elofsson. Bioinformatics, 2016
 
 Related -
 Hayat, Sikander and Elofsson, Arne, Bioinformatics, 28(4), 516--522, 2012
