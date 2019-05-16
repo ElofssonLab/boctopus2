@@ -4,8 +4,9 @@ LABEL version "1.0"
 
 # Install Miniconda2
 RUN apt-get update && apt-get -y dist-upgrade && \
+    apt-get install -y --no-install-recommends bzip2 curl ca-certificates language-pack-en  fontconfig vim && \
     curl https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh -O && \
-    bash  Miniconda2-latest-Linux-x86_64.sh -bf -p /opt/miniconda3/ && \
+    bash  Miniconda2-latest-Linux-x86_64.sh -bf -p /opt/miniconda2/ && \
     rm Miniconda2-latest-Linux-x86_64.sh
 
 # Add Conda to PATH
