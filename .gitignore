@@ -7,7 +7,7 @@
 # backup folder
 bak/
 
-src/app
+#src/app
 tex.cache
 test/out*
 
