@@ -1,0 +1,9 @@
+.git
+Dockerfile
+.DS_Store
+.gitignore
+
+*.pyc
+*.csv
+/tmp/*
+src/app
