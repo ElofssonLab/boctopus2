@@ -52,7 +52,7 @@ infile = os.path.realpath(infile)
 outpath = os.path.realpath(outpath)
 
 ##################### Load configuration ######################
-with open("config.yml", 'r') as ymlfile:
+with open("%s/config.yml"%(rundir), 'r') as ymlfile:
     cfg = yaml.safe_load(ymlfile)
 
 HHBLITS_PATH = cfg['HHBLITS_PATH']
