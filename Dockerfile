@@ -18,7 +18,7 @@ SHELL ["/bin/bash", "-c"]
 
 WORKDIR /app
 
-RUN mkdir -p /data
+RUN mkdir -p /data /scratch /static
 
 # Set up the Conda environment
 COPY conda_env.yml .
